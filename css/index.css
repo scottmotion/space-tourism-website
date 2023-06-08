@@ -222,3 +222,45 @@ select {
     transform: scale(1.65);
 }
 
+.primary-navigation {
+    --gap: 8rem;
+    --underline-gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-navigation a {
+    text-decoration: none;
+}
+
+.primary-navigation a > span {
+    font-weight: 700;
+    margin-right: .5em;
+}
+
+.underline-indicators > * {
+    padding: var(--underline-gap, 1rem) 0;
+    border: 0;
+    border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
+}
+
+.underline-indicators > li:hover,
+.underline-indicators > li:focus,
+.underline-indicators > button:hover,
+.underline-indicators > button:focus {
+    border-color: hsl( var(--clr-white) / .5);
+    cursor: pointer;
+}
+
+.underline-indicators > li.active,
+.underline-indicators > button[aria-selected="true"] {
+    color: hsl( var(--clr-white) / 1);
+    border-color: hsl( var(--clr-white) / 1);
+}
+
+.tab-list {
+    --gap: 2rem;
+}
+
+
