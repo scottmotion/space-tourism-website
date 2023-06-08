@@ -44,6 +44,7 @@
             <section class="flow" id="typography" style="margin: 4rem 0;">
                 <h2 class="numbered-title"><span>02</span> Typography</h2>
                 <div class="flex">
+
                     <div class="flow" style="flex-basis: 100%; --flow-space: 4rem;">
                         <div> 
                             <p class="text-accent">Heading 1 - Bellefair Regular - 150px</p>
@@ -66,6 +67,7 @@
                             <p class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">So, you want to travel to space</p>
                         </div>
                     </div>
+
                     <div class="flow" style="flex-basis: 100%; --flow-space: 4rem;">
                         <div> 
                             <p class="text-accent">Subheading 1 - Bellefair Regular - 28px</p>
@@ -86,42 +88,82 @@
                     </div>
                 </div>
             </section>
-            <section class="flow" id="interactive-elements">
+
+            <section class="flow" id="interactive-elements" style="margin: 4rem 0;  margin-bottom: -10rem;">
                 <h2 class="numbered-title"><span>03</span> Interactive elements</h2>
                 
                 <!-- navigation -->
-                <div>
+                <div class="flow" style="--flow-space: 2rem;">
                     <nav>
                         <ul class="primary-navigation underline-indicators flex">
-                            <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>Active</a>
-                            <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Hovered</a>
-                            <li><a class="uppercase text-white letter-spacing-2" href="#"><span>03</span>Idle</a>
+                            <li class="active"><a class="uppercase text-white letter-spacing-2" href="#"><span>00</span>Active</a>
+                            <li class="hovered"><a class="uppercase text-white letter-spacing-2" href="#"><span>01</span>Hovered</a>
+                            <li><a class="uppercase text-white letter-spacing-2" href="#"><span>02</span>Idle</a>
                         </ul>
                     </nav>
+                    <p class="text-accent text-center">Different States of Navigation Bar</p>
                 </div>
                 
-                <div class="flex">
-                    <div style="margin-top: 5rem">
-                        <!-- explore button -->
-                        <a href="#" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+                <div class="flex" style="margin-top: 5rem;">
+                    <div class="flex flow" style="flex-basis: 50%; flex-direction: column; align-items: center; gap: 8rem;">
+                        <div class="flow">
+                            <!-- explore button -->
+                            <a href="#" aria-selected="false" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+                            <p class="text-accent text-center">Landing Page Main Button - Idle</p>
+
+                        </div>
+                        <div class="flow">
+                            <!-- explore button -->
+                            <a href="#" aria-selected="true" class="large-button uppercase ff-serif fs-600 text-dark bg-white">Explore</a>
+                            <p class="text-accent text-center" style="--flow-space: 7rem">Landing Page Main Button - Hover</p>
+                        </div>
+
                     </div>
+
                     
-                    <div style="margin-bottom: 50vh">
+                    <div class="flex flow" style="flex-basis: 50%; flex-direction: column; align-items: center; justify-content: space-between; gap: 4rem;     --flow-space: 2rem;">
                         <!-- Tabs -->
-                        <div class="tab-list underline-indicators flex">
-                            <button aria-selected="true" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
-                            <button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Mars</button>
-                            <button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+                        <div class="flow">
+                            <div class="tab-list underline-indicators flex" style="justify-content: center;">
+                                <button aria-selected="true" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Moon</button>
+                                <button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2 hovered">Mars</button>
+                                <button aria-selected="false" class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">Europa</button>
+                            </div>
+                            <div>
+                                <p class="text-accent text-center">Tabs (Active, Hover, & Idle)</p>
+                            </div>
                         </div>
                         
                         <!-- Dots -->
-                        
-                        
+                        <div class="flow">
+                            <div class="dot-indicators flex" style="justify-content: center;">
+                                <button aria-selected="true"><span class="sr-only">.</span></button>
+                                <button aria-selected="false" class="hovered"><span class="sr-only">.</span></button>
+                                <button aria-selected="false"><span class="sr-only">.</span></button>
+                            </div>
+                            <div>
+                                <p class="text-accent text-center">Slider 1 States (Active, Hover, & Idle)</p>
+                            </div>
+                        </div>
+
                         <!-- Numbers -->
+                        <div class="flow">
+                            <div class="number-indicators flex" style="flex-direction: column; justify-content: center; align-items: center;">
+                                <button aria-selected="true" class="number-indicator uppercase ff-serif fs-600 text-white bg-dark">1</button>
+                                <button aria-selected="false" class="number-indicator uppercase ff-serif fs-600 text-white bg-dark hovered">2</button>
+                                <button aria-selected="false" class="number-indicator uppercase ff-serif fs-600 text-white bg-dark">3</button>
+                            </div>
+                            <div>
+                                <p class="text-accent text-center">Slider 2 States (Active, Hover, & Idle)</p>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
                 
             </section>
+            <section class="design-system-bg"></section>
         </div>
         <script src="js/script.js"></script>
     </body>
