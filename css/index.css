@@ -119,8 +119,8 @@ select {
 }
 
 .container {
-    padding-inline: 2em;
-    max-width: 74rem;
+    /* padding-inline: 2em; */
+    max-width: 80rem;
     margin-inline: auto;
 }
 
