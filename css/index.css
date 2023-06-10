@@ -176,6 +176,14 @@ select {
         padding-bottom: max(6rem, 20vh);
         align-items: end;
     }
+    .grid-container--home > *:first-child {
+        justify-self: flex-start;
+        grid-column: 2;
+    }
+    .grid-container--home > *:last-child {
+        justify-self: flex-end;
+        grid-column: 3;
+    }
 }
 
 
@@ -250,15 +258,21 @@ select {
 /* ------------------- */
 
 .large-button {
-    font-size: 2rem;
+    font-size: 1.25rem;
     position: relative;
     display: inline-grid;
     z-index: 1;
     place-content: center;
-    padding: 0 2.2em;
+    padding: 0 2em;
     aspect-ratio: 1;
     text-decoration: none;
     border-radius: 50%;
+}
+
+@media (min-width: 35em) {
+    .large-button {
+        font-size: 2rem;
+    }
 }
 
 .large-button::after {
@@ -364,12 +378,6 @@ select {
     background-color: hsl( var(--clr-white) / 1);
     border: 1px solid hsl(var(--clr-light));
 }
-
-/* #interactive-elements {
-    background-image: url(/assets/crew/background-crew-desktop.jpg);
-    background-position: bottom;
-    background-repeat: no-repeat;
-} */
 
 
 /* ------------------------------ */
