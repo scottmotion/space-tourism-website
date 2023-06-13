@@ -543,10 +543,6 @@ body {
     padding-bottom: 4rem;
 }
 
-.grid-container * {
-    /* max-width: 49ch; */
-}
-
 .numbered-title {
     grid-area: title;
 }
