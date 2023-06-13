@@ -48,8 +48,14 @@ function changeTabFocus(e) {
 }
 
 function changeTabPanel(e) {
-    const tabElement =  e.target;
-    console.log("tabElement: ", tabElement);
-    // tabFocus = tabElement.tabindex;
-    console.log("tab panel changed. tabFocus: ", tabFocus);
+    const targetTab =  e.target;
+    // console.log("tabElement: ", targetTab);
+    // console.log("tab panel changed. tabFocus: ", targetTab);
+
+    const targetPanel = targetTab.getAttribute("aria-controls");
+    console.log(targetPanel);
+
+
+
+
 }

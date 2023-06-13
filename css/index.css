@@ -102,6 +102,10 @@ picture {
     display: block;
 }
 
+/* override display value on hidden element */
+[hidden] { display: none !important; }
+
+
 /* make form elements easier to work with */
 input,
 button,
@@ -121,7 +125,7 @@ select {
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
-  }
+}
 
 /* ------------------- */
 /* Utility Classes     */
