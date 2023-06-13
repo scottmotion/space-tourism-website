@@ -32,7 +32,7 @@
         --fs-400: 1rem;
     }
 }
-@media (min-width: 45em) {
+@media (min-width: 50em) {
     :root {
         /* font-sizes */
         --fs-800: 6.25rem;
@@ -709,8 +709,11 @@ body {
     .destination-info {
         max-width: min(85vw, 43ch);
     }
+    /* .destination-info > p {
+        min-height: 22ch;
+    } */
     .destination-meta {
-        --gap: min(5vw, 6rem);
+        --gap: min(3vw, 6rem);
         justify-content: start;
     } 
     .grid-container--crew {

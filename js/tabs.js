@@ -49,13 +49,22 @@ function changeTabFocus(e) {
 
 function changeTabPanel(e) {
     const targetTab =  e.target;
-    // console.log("tabElement: ", targetTab);
-    // console.log("tab panel changed. tabFocus: ", targetTab);
 
     const targetPanel = targetTab.getAttribute("aria-controls");
-    console.log(targetPanel);
+    const targetPicture = targetTab.getAttribute("data-image");
 
+    const tabContainer = targetTab.parentNode;
+    const mainContainer = tabContainer.parentNode;
 
+    mainContainer
+        .querySelectorAll('[role="tabpanel"]')
+        .forEach((tabpanel) => tabpanel.setAttribute("hidden", true));
+    mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden');
 
+    mainContainer
+        .querySelectorAll('picture')
+        .forEach((picture) => picture.setAttribute("hidden", true));
+        
+    mainContainer.querySelector([`#${targetPicture}`]).removeAttribute('hidden');
 
 }
