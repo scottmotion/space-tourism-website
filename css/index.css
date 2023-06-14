@@ -726,6 +726,11 @@ body {
     .grid-container--crew > .dot-indicators {
         justify-self: start;
     }
+    .grid-container--crew > .crew-details {
+        /* width: 100%;
+        max-width: 80%; */
+        justify-self: start;
+    }
     .grid-container--crew > picture {
         align-self: end;
     }
