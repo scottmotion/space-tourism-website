@@ -300,6 +300,9 @@ select {
     justify-content: space-between;
     align-items: center;
 }
+.primary-header nav {
+    align-self: flex-start;
+}
 .primary-nav-accent {
     display: none;
 }
@@ -585,8 +588,8 @@ body {
     text-align: center;
     display: grid;
     place-items: center;
-    padding-inline: 1rem;
-    padding-bottom: 4rem;
+    /* padding-inline: 1rem; */
+    /* padding-bottom: 4rem; */
 }
 
 .numbered-title {
@@ -621,8 +624,12 @@ body {
 .destination-info {
     /* --flow-space: 1.25rem; */
     width: 100%;
-    max-width: 80%;
+    /* max-width: 80%; */
     align-self: flex-start;
+}
+.destination-info > p {
+    max-width: min(85vw, 65ch);
+    margin-inline: auto;
 }
 
 .destination-info p {
@@ -674,8 +681,9 @@ body {
     color: hsl( var(--clr-white) / .5 );
 }
 
-.grid-container--crew > .crew-info p {
+.grid-container--crew > .crew-info > p {
     max-width: min(85vw, 51ch);
+    --flow-space: 0;
 }
 
 /* technology layout */
@@ -703,16 +711,18 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.grid-container--technology > .technology-info > p {
-    max-width: min(85vw, 35ch);
+.grid-container--technology > .technology-info  p {
+    max-width: min(85vw, 51ch);
 }
 
 
 @media (min-width: 35em) {
+    /* all pages */
     .numbered-title {
         justify-self: start;
         margin-block-start: 2rem;
     }
+    /* destination */
     .destination-meta {
         flex-direction: row;
         justify-content: space-evenly;
@@ -720,6 +730,7 @@ body {
     .destination-meta-item {
         margin-top: 0;
     }
+    /* crew */
     .grid-container--crew {
         padding-bottom: 0;
         /* --flow-space: 2rem; */
@@ -728,16 +739,19 @@ body {
             'content'
             'tabs'
             'image';
-    }    
+    }
 }
 
 @media (min-width: 50em ) {
+    
+    /* all pages */
     .grid-container {
         text-align: left;
         column-gap: var(--container-gap, 2rem);
         grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 35rem)) minmax(1rem, 1fr);
     }
 
+    /* home */
     .grid-container--home {
         padding-bottom: max(6rem, 20vh);
         align-items: end;
@@ -751,6 +765,7 @@ body {
         grid-column: 3;
     }
 
+    /* destination */
     .grid-container--destination {
         justify-items: start;
         align-content: start;
@@ -758,6 +773,7 @@ body {
             '. title title .'
             '. image tabs .'
             '. image content .';
+        grid-template-rows: 1fr 1fr auto 1fr;
     }
     .grid-container--destination > picture,
     .grid-container--crew > picture {
@@ -774,12 +790,15 @@ body {
         --gap: min(5vw, 6rem);
         justify-content: start;
     } 
+
+    /* crew */
     .grid-container--crew {
-        /* --flow-space: 2rem; */
+        --flow-space: 0;
         grid-template-areas:
             '. title image .'
             '. content image .'
             '. tabs image .';
+        grid-template-rows: 1fr auto 1fr;
     }
     .grid-container--crew > .dot-indicators {
         justify-self: start;
@@ -791,15 +810,48 @@ body {
         align-items: start;
     }
     .grid-container--crew > .crew-info > p {
+        --flow-space: initial;
         max-width: min(85vw, 45ch);
     }
     .grid-container--crew > .crew-info > header > p {
         white-space: nowrap;
     }
-
     .grid-container--crew > picture {
         grid-column: span 2;
         align-self: end;
     }
-    
+
+    /* technology */
+    .grid-container--technology {
+        grid-template-columns: minmax(1rem, 1fr) clamp(3rem, 8vw, 8rem) minmax(0, 35rem) minmax(0, 35rem) minmax(1rem, 1fr);
+        grid-template-rows: 1fr auto 1fr;
+    }
+
+    .grid-container--technology {
+        --flow-space: 0;
+        grid-template-areas:
+            '. title title image .'
+            '. tabs content image .'
+            '. . . image .';
+    }
+    .grid-container--technology > .number-indicators {
+        flex-direction: column;
+        justify-self: start;
+    }
+    .grid-container--technology > .technology-info {
+        /* width: 100%;
+        max-width: 80%; */
+        justify-self: start;
+        align-items: start;
+    }
+    .grid-container--technology > .technology-info > p {
+        max-width: min(85vw, 43ch);
+    }
+
+
+    .grid-container--technology > picture {
+        grid-column: span 2;
+        /* align-self: end; */
+    }
+
 }
