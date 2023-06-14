@@ -14,37 +14,28 @@ function changeTabFocus(e) {
     const keydownRight = 39;
     const keydownCode = e.keyCode;
     const tabElement =  e.target;
-    // console.log("key code: ", keydownCode);
 
-    // change the tabindex of the current tab to -1
     if (keydownCode === keydownLeft || keydownCode === keydownRight) {
-        // console.log("key code: ", keydownCode);
-        // console.log("tabElement: ", tabElement);
+    // change the tabindex of the current tab to -1
         tabElement.setAttribute("tabindex", -1);
-        tabElement.setAttribute("aria-selected", false);
 
-    }
-    
-    // if the right key is pushed, move to the next tab on the right
-    if (e.keyCode === keydownRight) {
-        tabFocus++;
-        if (tabFocus >= tabs.length) {
-            tabFocus = 0;
-        }
-    }
-    
-    // if the left key is pushed, move to the next tab on the left
-    if (e.keyCode === keydownLeft) {
-        tabFocus--;
-        if (tabFocus < 0) {
-            tabFocus = tabs.length -1;
+        if (e.keyCode === keydownRight) {
+        // if the right key is pushed, move to the next tab on the right
+            tabFocus++;
+            if (tabFocus >= tabs.length) {
+                tabFocus = 0;
+            }
+        } else if (e.keyCode === keydownLeft) {
+        // if the left key is pushed, move to the next tab on the left
+            tabFocus--;
+            if (tabFocus < 0) {
+                tabFocus = tabs.length -1;
+            }
         }
 
+        tabs[tabFocus].setAttribute("tabindex", 0);
+        tabs[tabFocus].focus();
     }
-
-    tabs[tabFocus].setAttribute("tabindex", 0);
-    tabs[tabFocus].focus();
-    // tabs[tabFocus].setAttribute("aria-selected", true);
 }
 
 function changeTabPanel(e) {
@@ -55,16 +46,27 @@ function changeTabPanel(e) {
 
     const tabContainer = targetTab.parentNode;
     const mainContainer = tabContainer.parentNode;
+    
+    hideContent(mainContainer, '[role="tabpanel"]');
+    showContent(mainContainer, targetPanel);
 
-    mainContainer
-        .querySelectorAll('[role="tabpanel"]')
-        .forEach((tabpanel) => tabpanel.setAttribute("hidden", true));
-    mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden');
+    hideContent(mainContainer, 'picture');
+    showContent(mainContainer, targetPicture);
 
-    mainContainer
-        .querySelectorAll('picture')
-        .forEach((picture) => picture.setAttribute("hidden", true));
-        
-    mainContainer.querySelector([`#${targetPicture}`]).removeAttribute('hidden');
+    tabs.forEach((tab) => {
+        tab.setAttribute("aria-selected", false);
+    })
+    
+    targetTab.setAttribute("aria-selected", true);
 
+}
+
+function hideContent(parent, content) {
+    parent
+    .querySelectorAll(content)
+    .forEach((item) => item.setAttribute("hidden", true));
+}
+
+function showContent(parent, content) {
+    parent.querySelector([`#${content}`]).removeAttribute('hidden');
 }
