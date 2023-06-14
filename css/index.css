@@ -531,48 +531,54 @@ body {
 
 /* destination */
 .destination {
+    background-position: top center;
     background-image: url(/assets/destination/background-destination-mobile.jpg);
 }
 @media (min-width: 35em) {
     .destination {
-        background-position: center center;
+        background-position: top center;
         background-image: url(/assets/destination/background-destination-tablet.jpg);
     }
 }
 @media (min-width: 50em) {
     .destination {
+        background-position: top center;
         background-image: url(/assets/destination/background-destination-desktop.jpg);
     }    
 }
 
 /* crew */
 .crew {
+    background-position: top center;
     background-image: url(/assets/crew/background-crew-mobile.jpg);
 }
 @media (min-width: 35em) {
     .crew {
-        background-position: center center;
+        background-position: top center;
         background-image: url(/assets/crew/background-crew-tablet.jpg);
     }
 }
 @media (min-width: 50em) {
     .crew {
+        background-position: top center;
         background-image: url(/assets/crew/background-crew-desktop.jpg);
     }    
 }
 
 /* technology */
 .technology {
+    background-position: top center;
     background-image: url(/assets/technology/background-technology-mobile.jpg);
 }
 @media (min-width: 35em) {
     .technology {
-        background-position: center center;
+        background-position: top center;
         background-image: url(/assets/technology/background-technology-tablet.jpg);
     }
 }
 @media (min-width: 50em) {
     .technology {
+        background-position: top center;
         background-image: url(/assets/technology/background-technology-desktop.jpg);
     }    
 }
@@ -605,6 +611,7 @@ body {
         'image'
         'tabs'
         'content';
+    grid-template-rows: auto auto auto minmax(0,1fr);
 }
 
 .grid-container--destination > picture {
@@ -625,7 +632,7 @@ body {
     /* --flow-space: 1.25rem; */
     width: 100%;
     /* max-width: 80%; */
-    align-self: flex-start;
+    /* align-self: flex-start; */
 }
 .destination-info > p {
     max-width: min(85vw, 65ch);
@@ -694,6 +701,7 @@ body {
         'image'
         'tabs'
         'content';
+        grid-template-rows: auto auto auto minmax(0,1fr);
 }
 .grid-container--technology > picture {
     grid-area: image;
