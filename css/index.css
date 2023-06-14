@@ -353,7 +353,7 @@ select {
     }
     .primary-navigation[data-visible="true"] {
         transform: translateX(0);
-        transition: all 1s;
+        transition: transform 750ms ease-in-out;
     }
     .mobile-nav-toggle {
         display: block;
