@@ -705,10 +705,11 @@ body {
 }
 .grid-container--technology > picture {
     grid-area: image;
-    /* max-width: min(50%, 300px);
-    align-self: start; */
+    width: 100%;
 }
-.grid-container--technology > .number-indicators {
+.grid-container--technology > picture >img {
+    width: 100%;
+}.grid-container--technology > .number-indicators {
     grid-area: tabs;
     flex-direction: row;
     justify-content: center;
@@ -831,7 +832,8 @@ body {
 
     /* technology */
     .grid-container--technology {
-        grid-template-columns: minmax(1rem, 1fr) clamp(3rem, 8vw, 8rem) minmax(0, 35rem) minmax(0, 35rem) minmax(1rem, 1fr);
+        /* grid-template-columns: minmax(1rem, 1fr) clamp(3rem, 8vw, 8rem) minmax(0, 35rem) minmax(0, 35rem) minmax(1rem, 1fr); */
+        grid-template-columns: minmax(1rem, 1fr) 5rem minmax(0, 28rem) minmax(0, 35rem) minmax(1rem, 1fr);
         grid-template-rows: 1fr auto 1fr;
     }
 
