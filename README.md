@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/space-tourism-website-flexboxgrid-UhP6IP__uG](https://www.frontendmentor.io/solutions/space-tourism-website-flexboxgrid-UhP6IP__uG)
+- Live Site URL: [https://scottmotion.github.io/space-tourism-website/](https://scottmotion.github.io/space-tourism-website/)
 
 ## My process
 
